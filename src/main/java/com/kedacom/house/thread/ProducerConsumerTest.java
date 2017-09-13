@@ -61,13 +61,15 @@ class ProducerThread implements Runnable{
 		while(true){
 			synchronized(depot){
 				//库存小于容量5时生产每次生产5个
-				if(depot.getSize()< (depot.getCapacity()-5)){
+				if(depot.getSize()< (depot.getCapacity()-10)){
 					System.out.println("生产前库存:" +depot.getSize());
 					java.util.Random r=new java.util.Random(); 
 					int count = r.nextInt(10);
 					depot.setSize(depot.getSize()+count);
 					System.out.println("生产了"+count+"个");
 					System.out.println("生产后库存:" +depot.getSize());
+					
+					depot.notifyAll();
 				}else{
 					try {
 						System.out.println("库存足够，无需生产：" +depot.getSize());
@@ -112,7 +114,7 @@ class ConsumerThread1 implements Runnable{
 						System.out.println("消费者[" 
 						+Thread.currentThread().getName() + "]消费了1个 库存：" + depot.getSize());	
 					
-						depot.notify();
+						depot.notifyAll();
 					}else{
 						try {
 							System.out.println("库存没了，赶紧崔生产:" + depot.getSize());
@@ -130,7 +132,12 @@ class ConsumerThread1 implements Runnable{
 						e.printStackTrace();
 					}
 				}else{
-					depot.notify();
+					try {
+						depot.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		}	
@@ -161,7 +168,8 @@ class ConsumerThread2 implements Runnable{
 						depot.setSize(depot.getSize()-1);
 						System.out.println("消费者[" 
 						+Thread.currentThread().getName() + "]消费了1个  ->库存还有：" + depot.getSize());
-						depot.notify();
+						
+						depot.notifyAll();
 					}else{
 						try {
 							System.out.println("库存没了，赶紧崔生产:" + depot.getSize());
@@ -179,7 +187,12 @@ class ConsumerThread2 implements Runnable{
 						e.printStackTrace();
 					}
 				}else{
-					depot.notify();
+					try {
+						depot.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		}	

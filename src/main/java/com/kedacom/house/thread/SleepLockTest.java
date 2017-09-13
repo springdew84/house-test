@@ -21,7 +21,7 @@ public class SleepLockTest{
          super(name); 
      } 
      public void run(){ 
-         // 获取obj对象的同步锁
+         //获取obj对象的同步锁
          synchronized (obj) {
     	 //实例对象
          //synchronized (this) {
