@@ -1,4 +1,4 @@
-package com.kedacom.house.thread;
+package com.cassey.house.thread;
 
 public class WaitNotifyTest2 {
 

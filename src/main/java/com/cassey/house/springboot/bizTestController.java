@@ -1,4 +1,4 @@
-package com.kedacom.house.springboot;
+package com.cassey.house.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

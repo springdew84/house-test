@@ -1,4 +1,4 @@
-package com.kedacom.house.thread;
+package com.cassey.house.thread;
 
 //Demo1.java的源码
 class MyThread extends Thread {

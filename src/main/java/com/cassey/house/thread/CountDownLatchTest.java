@@ -1,4 +1,4 @@
-package com.kedacom.house.thread;
+package com.cassey.house.thread;
 
 import java.util.concurrent.CountDownLatch;
 

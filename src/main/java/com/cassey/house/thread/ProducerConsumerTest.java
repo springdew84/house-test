@@ -1,4 +1,4 @@
-package com.kedacom.house.thread;
+package com.cassey.house.thread;
 
 /**
  * 仓库

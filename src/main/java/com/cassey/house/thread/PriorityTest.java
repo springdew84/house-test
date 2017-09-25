@@ -1,4 +1,4 @@
-package com.kedacom.house.thread;
+package com.cassey.house.thread;
 
 class MyThread2 extends Thread{  
     public MyThread2(String name) {

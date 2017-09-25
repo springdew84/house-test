@@ -1,4 +1,4 @@
-package com.kedacom.house.mail;
+package com.cassey.house.mail;
 
 import java.util.Iterator;
 import java.util.LinkedList;

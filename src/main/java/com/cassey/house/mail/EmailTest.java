@@ -1,11 +1,11 @@
-package com.kedacom.house.mail;
+package com.cassey.house.mail;
 
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
 
-import com.kedacom.house.mail.Email;
+import com.cassey.house.mail.Email;
 
 public class EmailTest {
 
