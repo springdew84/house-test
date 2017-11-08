@@ -6,6 +6,7 @@ import redis.clients.jedis.Transaction;
 import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -22,6 +23,7 @@ import java.util.UUID;
 public class DistributedLock {
 	
     private final JedisPool jedisPool;
+	private Random random = new Random();
 
     public DistributedLock(JedisPool jedisPool) {
         this.jedisPool = jedisPool;
@@ -56,6 +58,11 @@ public class DistributedLock {
                     retIdentifier = identifier;
                     return retIdentifier;
                 }
+                
+				//短暂休眠，避免可能的活锁                       
+				Thread.sleep(3, random.nextInt(30));
+				System.out.println("出现锁等待！thread="+Thread.currentThread().getName());
+				
                 // 返回-1代表key没有设置超时时间，为key设置一个超时时间
                 if (conn.ttl(lockKey) == -1) {
                     conn.expire(lockKey, lockExpire);
@@ -68,6 +75,8 @@ public class DistributedLock {
                 }
             }
         } catch (JedisException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (conn != null) {
