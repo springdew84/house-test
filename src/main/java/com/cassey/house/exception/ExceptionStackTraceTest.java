@@ -12,7 +12,7 @@ public class ExceptionStackTraceTest {
 		try{
 			int x = 1;
 			int y = 0;
-			int z = x/y;
+			//int z = x/y;
 		} catch(Exception e){
 			String trace = ExceptionUtils.getFullStackTrace(e);
 			System.out.println(trace);
