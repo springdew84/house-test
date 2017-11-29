@@ -3,7 +3,7 @@
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.kedacom.peppa</groupId>
+  <groupId>com.casse.house</groupId>
   <artifactId>maven-test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
    <packaging>war</packaging>  
@@ -65,11 +65,18 @@
 		    <version>2.9.0</version>
 		</dependency>
 		
-    
+		<!-- 加载本地jar包 -->
+<!-- 		<dependency>
+		    <groupId>if</groupId>
+		    <artifactId>encrypt</artifactId>
+		    <version>16</version>
+		    <scope>system</scope> 
+		    <systemPath>D:\Local_Repository\if-password-encrypt-2.1.1.jar</systemPath> 
+		</dependency> -->
   </dependencies>
   
    <!-- 局部配置 -->
-    <build>  
+     <build>  
         <plugins>  
             <plugin>  
                 <groupId>org.apache.maven.plugins</groupId>  
@@ -80,6 +87,6 @@
                 </configuration>  
             </plugin>  
         </plugins>  
-    </build>  
+    </build>
     
 </project>
