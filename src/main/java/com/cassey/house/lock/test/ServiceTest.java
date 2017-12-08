@@ -4,7 +4,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * 服务test
+ * DistributedLock测试类
  * @author chunyang.zhao
  *
  */

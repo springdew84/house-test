@@ -1,7 +1,9 @@
 package com.cassey.house.base.interfacetest;
 
 /**
- * 继承的例子 super关键字
+ * 实现接口的例子
+ * 接口引用变量指向实现类的实例
+ * 通过接口引用变量，只能调用到接口里定义的以及其父亲接口定义的方法
  * @author chunyang.zhao
  *
  */

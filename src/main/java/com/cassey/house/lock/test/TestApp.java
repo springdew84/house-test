@@ -1,5 +1,10 @@
 package com.cassey.house.lock.test;
 
+/**
+ * 测试入口
+ * @author chunyang.zhao
+ *
+ */
 class ThreadA extends Thread {
     private ServiceTest service;
 

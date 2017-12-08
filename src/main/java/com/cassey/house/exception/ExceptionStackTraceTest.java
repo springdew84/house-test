@@ -2,6 +2,11 @@ package com.cassey.house.exception;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
+/**
+ * 使用commons.lang包中的ExceptionUtils工具类
+ * @author chunyang.zhao
+ *
+ */
 public class ExceptionStackTraceTest {
 	
 	/**
