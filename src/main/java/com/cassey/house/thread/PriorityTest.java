@@ -1,5 +1,11 @@
 package com.cassey.house.thread;
 
+/**
+ * http://www.cnblogs.com/skywang12345/p/java_threads_category.html
+ * 
+ * @author chunyang.zhao
+ *
+ */
 class MyThread2 extends Thread{  
     public MyThread2(String name) {
         super(name);

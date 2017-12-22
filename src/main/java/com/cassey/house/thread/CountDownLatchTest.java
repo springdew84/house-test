@@ -2,6 +2,11 @@ package com.cassey.house.thread;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * CountDownLatch线程等待计数器的使用
+ * 同步辅助类，在完成一组正在其他线程中执行的操作之前，
+ * 它允许一个或多个线程一直等待
+ */
 public class CountDownLatchTest {
 
     private static int LATCH_SIZE = 5;
