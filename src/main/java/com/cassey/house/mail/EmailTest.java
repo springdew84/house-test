@@ -3,13 +3,13 @@ package com.cassey.house.mail;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 import com.cassey.house.mail.Email;
 
 public class EmailTest {
 
-	@Test
+	//@Test
 	public void sendEmail() throws Exception {
 		String userName = "11111111@qq.com"; // 发件人邮箱
 		String password = "********"; // 发件人密码
