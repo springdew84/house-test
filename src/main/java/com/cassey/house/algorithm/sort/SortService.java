@@ -1,5 +1,12 @@
 package com.cassey.house.algorithm.sort;
 
+/**
+ * 排序算法
+ * 1.快速排序
+ * 2.归并排序
+ * 3.堆排序
+ * 4.冒泡排序
+ */
 public interface SortService {
     /**
      * 排序
