@@ -10,26 +10,26 @@ public class QuickSortServiceImpl implements SortService {
 
         if (arr == null || arr.length == 1) return;
 
-        quickSort(arr, 0, arr.length - 1);
+        sort(arr, 0, arr.length - 1);
     }
 
     /**
-     * 反序逻辑
+     * 排序逻辑
      *
      * @param arr
      * @param low
      * @param high
      */
-    private static void quickSort(int[] arr, int low, int high) {
+    private void sort(int[] arr, int low, int high) {
         //当low>=hgit时，说明已经排序好
         if (low < high) {
             //查找基准数的正确索引
             int index = getIndex(arr, low, high);
 
             //对index之前的数组进行相同操作
-            quickSort(arr, 0, index - 1);
+            sort(arr, 0, index - 1);
             //对index之后的数组进行相同操作
-            quickSort(arr, index + 1, high);
+            sort(arr, index + 1, high);
         }
     }
 
@@ -41,7 +41,7 @@ public class QuickSortServiceImpl implements SortService {
      * @param high
      * @return
      */
-    private static int getIndex(int[] arr, int low, int high) {
+    private int getIndex(int[] arr, int low, int high) {
         //基准值
         int pivot = arr[low];
 

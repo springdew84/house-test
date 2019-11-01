@@ -1,6 +1,8 @@
 package com.cassey.house.algorithm.sort;
 
+import com.cassey.house.algorithm.sort.impl.BubbleSortServiceImpl;
 import com.cassey.house.algorithm.sort.impl.HeapSortServiceImpl;
+import com.cassey.house.algorithm.sort.impl.MergeSortServiceImpl;
 import com.cassey.house.algorithm.sort.impl.QuickSortServiceImpl;
 
 public class SortTest {
@@ -16,6 +18,8 @@ public class SortTest {
         SortService sortService = null;
         sortService = new QuickSortServiceImpl();
         sortService = new HeapSortServiceImpl();
+        sortService = new BubbleSortServiceImpl();
+        sortService = new MergeSortServiceImpl();
 
         sortService.sort(arr);
 
