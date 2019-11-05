@@ -1,6 +1,7 @@
 package com.cassey.house.algorithm.search;
 
 import com.cassey.house.algorithm.search.impl.BinSearchService;
+import com.cassey.house.algorithm.search.impl.FibonacciSearchService;
 import com.cassey.house.algorithm.sort.SortService;
 import com.cassey.house.algorithm.sort.impl.BubbleSortServiceImpl;
 import com.cassey.house.algorithm.sort.impl.HeapSortServiceImpl;
@@ -9,6 +10,8 @@ import com.cassey.house.algorithm.sort.impl.QuickSortServiceImpl;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SearchTest {
     public static void main(String[] args) {
@@ -32,7 +35,11 @@ public class SearchTest {
         }
 
         int key = Integer.parseInt(s.trim());
-        SearchService service = new BinSearchService();
+
+        SearchService service;
+        service = new BinSearchService();
+        service = new FibonacciSearchService();
+
         int res = service.find(arr, key);
 
         if (res >= 0) {

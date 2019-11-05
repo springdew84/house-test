@@ -12,13 +12,22 @@ package com.cassey.house.algorithm;
  * F(1)=1,
  * F(n)=F(n-1)+F(n-2)（n>=2，n∈N*）
  */
-public class FibonacciTest {
+public class FibonacciSequence {
     public static void main(String[] args) {
         int count = 47;
         printFib1(count);
         printFib2(count);
         printFib3(count);
         printFib4(count);
+    }
+
+    /**
+     * 数组法
+     *
+     * @param count
+     */
+    public static int[] getFibonacciArray(int count) {
+        return printFib3(count);
     }
 
     /**
@@ -80,8 +89,8 @@ public class FibonacciTest {
      * 数组实现法
      * @param count
      */
-    private static void printFib3(int count) {
-        long[] arr = new long[count];
+    private static int[] printFib3(int count) {
+        int[] arr = new int[count];
         arr[0] = 1;
         arr[1] = 1;
         System.out.println("--------------------------printFib3---------------------");
@@ -90,8 +99,10 @@ public class FibonacciTest {
             if(i > 1) {
                 arr[i] = arr[i-2] + arr[i-1];
             }
-            System.out.println((i+1) + ":" + arr[i]);
+            //System.out.println((i+1) + ":" + arr[i]);
         }
+
+        return arr;
     }
 
     /**
