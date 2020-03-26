@@ -22,7 +22,18 @@ public class TestScriptEngineManager {
 				+ "return a+b+c"
 				+ "}"
 				+ "sum(a,b,c);";
-		Object eval = engineByName.eval(js);
-		System.err.println(eval);
+		//Object eval = engineByName.eval(js);
+		//System.err.println(eval);
+
+		String value1 = "deal";
+		boolean isArticlePostSupported = false;
+		if(("post".equals(value1) || "guide".equals(value1)) && isArticlePostSupported) {
+			String t = "sss";
+			String s = t;
+		} else {
+			String t1 = "sss";
+			String s1 = t1;
+		}
+
 	}	
 }
