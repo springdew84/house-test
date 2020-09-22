@@ -18,6 +18,11 @@ public class ExceptionStackTraceTest {
 			int x = 1;
 			int y = 0;
 			//int z = x/y;
+
+			String s = "{}";
+
+			String t = s.substring(s.indexOf("{") +1 ,s.indexOf("}"));
+			String ss = t;
 		} catch(Exception e){
 			String trace = ExceptionUtils.getFullStackTrace(e);
 			System.out.println(trace);
