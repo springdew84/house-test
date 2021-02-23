@@ -11,6 +11,21 @@ import java.util.Iterator;
 
 /**
  *
+ * 这个例子的关键点：
+ *
+ *     创建一个ServerSocketChannel，和一个Selector，并且把这个server channel
+ *     注册到 selector上，注册的时间指定，这个channel 所感觉兴趣的事件是
+ *     SelectionKey.OP_ACCEPT，这个事件代表的是有客户端发起TCP连接请求。
+ *     使用 select
+ *     方法阻塞住线程，当select 返回的时候，线程被唤醒。
+ *     再通过selectedKeys方法得到所有可用channel的集合。
+ *
+ *     遍历这个集合，如果其中channel 上有连接到达，就接受新的连接，
+ *     然后把这个新的连接也注册到selector中去。如果有channel是读，
+ *     那就把数据读出来，并且把它感兴趣的事件改成写。
+ *
+ *     如果是写，就把数据写出去，并且把感兴趣的事件改成读。
+ *
  */
 public class NioServer {
     public static void main(String[] args) {
