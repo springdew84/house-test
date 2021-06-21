@@ -10,7 +10,9 @@ import com.cassey.house.algorithm.sort.impl.QuickSortServiceImpl;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SearchTest {
@@ -36,16 +38,19 @@ public class SearchTest {
 
         int key = Integer.parseInt(s.trim());
 
-        SearchService service;
-        service = new BinSearchService();
-        service = new FibonacciSearchService();
+        List<SearchService> serviceList = new ArrayList<>();
+        serviceList.add(new BinSearchService());
+        serviceList.add(new FibonacciSearchService());
 
-        int res = service.find(arr, key);
+        serviceList.forEach(service -> {
+            int res = service.find(arr, key);
 
-        if (res >= 0) {
-            System.out.print("success搜索[" + key + "]，索引为[" + res + "]");
-        } else {
-            System.out.print("fail搜索[" + key + "]");
-        }
+            if (res >= 0) {
+                System.out.println(service.name() + ", success搜索[" + key + "]，索引为[" + res + "]");
+            } else {
+                System.out.println(service.name() + ", fail搜索[" + key + "]");
+            }
+        });
+
     }
 }

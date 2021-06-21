@@ -38,6 +38,8 @@ package com.cassey.house.algorithm.search;
  * 只需要调整哈希函数算法即可在时间和空间上做出取舍
  */
 public interface SearchService {
+    String name();
+
     /**
      * 查询
      * @param arr

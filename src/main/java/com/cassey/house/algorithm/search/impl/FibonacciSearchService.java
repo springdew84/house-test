@@ -33,18 +33,21 @@ import com.cassey.house.algorithm.sort.impl.QuickSortServiceImpl;
  *
  */
 public class FibonacciSearchService implements SearchService {
+    @Override
+    public String name() {
+        return this.getClass().getSimpleName() + ":斐波那契查找算法";
+    }
 
     @Override
     public int find(int[] arr, int key) {
-        System.out.println("先对数组进行排序");
         SortService sortService = new QuickSortServiceImpl();
         sortService.sort(arr);
 
-        System.out.print("排序完毕：【");
-        for (int i : arr) {
-            System.out.print(i + ",");
-        }
-        System.out.println("】");
+//        System.out.print("排序完毕：【");
+//        for (int i : arr) {
+//            System.out.print(i + ",");
+//        }
+//        System.out.println("】");
 
         int low = 0;
         int high = arr.length - 1;

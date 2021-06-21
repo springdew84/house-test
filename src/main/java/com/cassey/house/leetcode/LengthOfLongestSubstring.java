@@ -3,6 +3,10 @@ package com.cassey.house.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+ * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+ */
 class LengthOfLongestSubstring {
     public static int lengthOfLongestSubstring(String s) {
         Set<Character> allChars = new HashSet<>();
@@ -11,8 +15,8 @@ class LengthOfLongestSubstring {
         int right = -1;
         int maxLength = 0;
 
-        for(int i=0;i<n;i++) {
-            if(i != 0) {
+        for (int i = 0; i < n; i++) {
+            if (i != 0) {
                 allChars.remove(s.charAt(i - 1));
             }
 
@@ -29,7 +33,7 @@ class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
 
-        int i = 5 /2;
+        int i = 5 / 2;
         System.out.println("i:" + i);
 
 

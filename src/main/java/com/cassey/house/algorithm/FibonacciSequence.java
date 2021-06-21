@@ -93,7 +93,6 @@ public class FibonacciSequence {
         int[] arr = new int[count];
         arr[0] = 1;
         arr[1] = 1;
-        System.out.println("--------------------------printFib3---------------------");
 
         for (int i = 0; i < arr.length; i++) {
             if(i > 1) {

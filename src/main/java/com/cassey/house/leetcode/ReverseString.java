@@ -1,5 +1,7 @@
 package com.cassey.house.leetcode;
 
+import java.util.Arrays;
+
 public class ReverseString {
     public static void reverseStringFun(char[] s) {
         int n = s.length / 2 ;
@@ -10,15 +12,12 @@ public class ReverseString {
             s[s.length -i - 1] = tmp;
         }
 
-        System.out.println(s);
-
+        System.out.println("before:" + Arrays.toString(s));
     }
 
     public static void main(String[] args) {
         char[] s = {'h', 'e', 'l', 'l', 'o'};
-
+        System.out.println("before:" + Arrays.toString(s));
         reverseStringFun(s);
-
-        System.out.println(s);
     }
 }

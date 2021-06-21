@@ -19,6 +19,6 @@ public interface SortService {
      * @param name
      */
     default void sortDesc(String name) {
-        System.out.print("使用了【" + name + "】算法");
+        System.out.println("使用了【" + name + "】算法");
     }
 }
