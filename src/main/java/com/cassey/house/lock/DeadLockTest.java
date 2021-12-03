@@ -18,7 +18,7 @@ public class DeadLockTest {
             synchronized (chopstick1) {
                 System.out.println(Thread.currentThread().getName() + "get chopstick " + chopstick1.getId());
                 try {
-                    Thread.sleep(20);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -26,7 +26,7 @@ public class DeadLockTest {
                     System.out.println(Thread.currentThread().getName() + "get chopstick " + chopstick2.getId());
                     System.out.println(Thread.currentThread().getName() + "开吃了");
                     try {
-                        Thread.sleep(300);
+                        Thread.sleep(10000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -68,7 +68,7 @@ public class DeadLockTest {
     /**
      * 单只筷子
      */
-    static class Chopstick {
+     static class Chopstick {
         private Integer id;
 
         public Chopstick(Integer id) {
