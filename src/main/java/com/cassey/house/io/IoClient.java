@@ -23,18 +23,21 @@ class IoClient {
 
             writeBuffer.put("hello kitty".getBytes());
             writeBuffer.flip();
+            writeBuffer.rewind();
+            socketChannel.write(writeBuffer);
 
-            while (true) {
-                writeBuffer.rewind();
-                socketChannel.write(writeBuffer);
 
-                readBuffer.rewind();
-                socketChannel.read(readBuffer);
-                readBuffer.flip();
-                System.out.println("i received : " + new String(readBuffer.array()));
-
-                Thread.sleep(1000);
-            }
+//            while (true) {
+//                writeBuffer.rewind();
+//                socketChannel.write(writeBuffer);
+//
+//                readBuffer.rewind();
+//                socketChannel.read(readBuffer);
+//                readBuffer.flip();
+//                System.out.println("i received : " + new String(readBuffer.array()));
+//
+//                Thread.sleep(1000);
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }

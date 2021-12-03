@@ -22,6 +22,7 @@ public class WaitNotifyTest2 {
         synchronized(obj) {
             // 主线程等待唤醒。
             System.out.println(Thread.currentThread().getName()+" notifyAll()");
+            //obj.notify();
             obj.notifyAll();
         }
     }

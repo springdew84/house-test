@@ -32,7 +32,7 @@ public class MaxDirectMemorySize {
         Field maxMemory = c.getDeclaredField("maxMemory");
         maxMemory.setAccessible(true);
         synchronized (c) {
-            Long maxMemoryValue = (Long) maxMemory.get(null);
+            Long maxMemoryValue = (Long) maxMemory.get(c);
             System.out.println("maxMemoryValue:" + maxMemoryValue);
         }
     }

@@ -32,6 +32,9 @@ class LengthOfLongestSubstring {
     }
 
     public static void main(String[] args) {
+        long ff = 333L;
+        long ddd = 445L;
+        System.out.println(1F * ff / ddd);
 
         int i = 5 / 2;
         System.out.println("i:" + i);

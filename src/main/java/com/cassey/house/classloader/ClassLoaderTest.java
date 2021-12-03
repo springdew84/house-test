@@ -25,8 +25,10 @@ public class ClassLoaderTest {
 	@SuppressWarnings("restriction")
 	public static void main(String[] args) {
 		//同样效果：System.out.println("Class loader:" + ClassLoader.getSystemClassLoader());
-		System.out.println("Class loader:" + ClassLoaderTest.class.getClassLoader().toString());//sun.misc.Launcher$AppClassLoader@18b4aac2
+		System.out.println("String Class loader:" + String.class.getClassLoader());//
+		System.out.println("ClassLoaderTest Class loader:" + ClassLoaderTest.class.getClassLoader().toString());//sun.misc.Launcher$AppClassLoader@18b4aac2
 		System.out.println("AppClassLoader path:" + System.getProperty("java.class.path"));
+		System.out.println("AppClassLoader path:" + System.getProperty("sun.boot.class.path"));
 
 		System.out.println("Class loader parent:" + ClassLoaderTest.class.getClassLoader().getParent());//sun.misc.Launcher$ExtClassLoader@2f2c9b19
 		System.out.println("ExtClassLoader path:" + System.getProperty("java.ext.dirs"));
