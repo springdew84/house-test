@@ -54,4 +54,36 @@ public class BinSearchService implements SearchService {
         }
         return -1;
     }
+
+    /**
+     * 有重复数据时返回第一条
+     * 没查找到时返回数组长度
+     * @param arr
+     * @param key
+     * @return
+     */
+    public int find2(int[] arr, int key) {
+        int middle;
+        int start = 0;
+        int end = arr.length - 1;
+
+        while(start <= end) {
+            middle = (start + end) / 2;
+
+            if(key > middle) {
+                start = middle + 1;
+            } else if(key < middle) {
+                end = middle - 1;
+            } else {
+                int first = middle;
+                while (first >= 0 && arr[first] == arr[middle]) {
+                    first--;
+                }
+
+                return first++;
+            }
+        }
+
+        return arr.length;
+    }
 }

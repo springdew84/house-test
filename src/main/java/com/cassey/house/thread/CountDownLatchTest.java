@@ -11,6 +11,7 @@ public class CountDownLatchTest {
 
     private static int LATCH_SIZE = 5;
     private static CountDownLatch doneSignal;
+
     public static void main(String[] args) {
 
         try {

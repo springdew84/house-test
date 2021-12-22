@@ -6,6 +6,11 @@ package com.cassey.house.algorithm;
 public class PrimeNumber {
 
     public static void main(String[] args) {
+        float[] aa = new float[2];
+        for(float i : aa) {
+            System.out.println(":" + i);
+        }
+
         printPrimeNumber(1000);
 
         System.out.println(Math.sqrt(9));

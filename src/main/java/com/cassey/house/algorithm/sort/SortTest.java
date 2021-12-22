@@ -16,10 +16,10 @@ public class SortTest {
         System.out.println("】");
 
         SortService sortService = null;
-        sortService = new QuickSortServiceImpl();
-        sortService = new HeapSortServiceImpl();
+        //sortService = new QuickSortServiceImpl();
+        //sortService = new HeapSortServiceImpl();
         sortService = new BubbleSortServiceImpl();
-        sortService = new MergeSortServiceImpl();
+        //sortService = new MergeSortServiceImpl();
 
         sortService.sort(arr);
 

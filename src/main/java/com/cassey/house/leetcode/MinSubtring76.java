@@ -1,5 +1,8 @@
 package com.cassey.house.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *  76. 最小覆盖子串（Minimum Window Substring）
  *
@@ -18,33 +21,17 @@ package com.cassey.house.leetcode;
  */
 public class MinSubtring76 {
     public static String minWindow(String s, String t) {
-        int[] sCount = new int[128];
-        int[] tCount = new int[128];
-        //在source中查到target中字母的个数
-        int found = 0;
 
-        for (int i = 0; i < 128; i++) {
-            sCount[i] = 0;
-            tCount[i] = 0;
+        int len = s.length();
+        Set<Character> tSet = new HashSet<>();
+        for(char tt : t.toCharArray()) {
+            tSet.add(tt);
         }
 
-        for (char c : t.toCharArray()) {
-            tCount[c]++;
-        }
-
-        for (char c : s.toCharArray()) {
-            sCount[c]++;
-        }
-
-        for (int i = 0; i < s.length(); i++) {
-            sCount[s.charAt(i)]++;
-
-            if (sCount[s.charAt(i)] <= tCount[s.charAt(i)]) {
-                found++;
-            }
-
-            //包含字符
-            if(found == t.length()) {
+        int start = -1;
+        for (int i = 0; i < len; i++) {
+            Character c = s.charAt(0);
+            if(tSet.contains(c) && start > -1) {
 
             }
         }
