@@ -1,4 +1,6 @@
-package com.cassey.house.leetcode;
+package com.cassey.house.algorithm;
+
+import java.util.Arrays;
 
 /**
  * 合并两个有序（升序）数组，使合并后的数组任然有序
@@ -9,11 +11,7 @@ public class MergeSortArray {
         int[] arr1 = {2,3,7,9,15};
 
         int[] merge = merge(arr1, arr2);
-        for(int v : merge) {
-            System.out.print(v);
-            System.out.print(",");
-        }
-        System.out.println("");
+        System.out.println(Arrays.toString(merge));
     }
 
     private static int[] merge(int[] arr1, int[] arr2) {

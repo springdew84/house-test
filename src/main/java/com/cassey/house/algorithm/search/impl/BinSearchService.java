@@ -6,6 +6,7 @@ import com.cassey.house.algorithm.sort.impl.QuickSortServiceImpl;
 
 /**
  * 折半查找（二分查找）
+ * 时间复杂度： O（log2n）
  *
  * 折半查找的前提条件是需要有序表顺序存储，对于静态查找表，
  * 一次排序后不再变化，折半查找能得到不错的效率。
@@ -69,6 +70,10 @@ public class BinSearchService implements SearchService {
 
         while(start <= end) {
             middle = (start + end) / 2;
+
+            if(middle >= arr.length) {
+                return arr.length;
+            }
 
             if(key > middle) {
                 start = middle + 1;
