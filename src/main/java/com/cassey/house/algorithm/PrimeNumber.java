@@ -2,6 +2,12 @@ package com.cassey.house.algorithm;
 
 /**
  * 素数(质数)
+ * 质数又称素数。
+ * 指在一个大于1的自然数中，除了1和此整数自身外，没法被其他自然数整除的数。
+ * 换句话说，只有两个正因数（1和自己）的自然数即为素数。
+ * 比1大但不是素数的数称为合数。
+ * 1和0既非素数也非合数。
+ * 合数是由若干个质数相乘而得到的。所以，质数是合数的基础，没有质数就没有合数。
  */
 public class PrimeNumber {
 
@@ -13,7 +19,8 @@ public class PrimeNumber {
 
         printPrimeNumber(1000);
 
-        System.out.println(Math.sqrt(9));
+        System.out.println(" ");
+        System.out.println("Math.sqrt(9)=" + Math.sqrt(9));
     }
 
     /**
