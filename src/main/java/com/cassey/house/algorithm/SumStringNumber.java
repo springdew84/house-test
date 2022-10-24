@@ -1,6 +1,7 @@
 package com.cassey.house.algorithm;
 
 /**
+ * 大数加法
  * 数字的字符串实现加法
  * 如输入"123"+"34"="157"
  */
@@ -10,12 +11,13 @@ public class SumStringNumber {
         String str2 = "496";
 
         //System.out.println(sum1(str1, str2));
-        System.out.println(sum2(str1, str2));
+        //System.out.println(sum2(str1, str2));
+        System.out.println(sum3(str1, str2));
     }
 
     /**
      * 面试题
-     *
+     * 先转数组，按最大位数+1数为迭代
      * @param str1
      * @param str2
      * @return
@@ -77,7 +79,7 @@ public class SumStringNumber {
 
     /**
      * 新想法
-     *
+     * 减少了white循环中的复杂度
      * @param str1
      * @param str2
      * @return
@@ -129,6 +131,32 @@ public class SumStringNumber {
             }
             sb.append(sum[k]);
         }
+        return sb.toString();
+    }
+
+    /**
+     * 新想法
+     * 减少代码量
+     * @param str1
+     * @param str2
+     * @return
+     */
+    private static String sum3(String str1, String str2) {
+        StringBuilder sb = new StringBuilder();
+        int index1 = str1.length() - 1;
+        int index2 = str2.length() - 1;
+        int carry = 0;
+
+        //两个index其1没遍历完或两个都遍历完，但进位不为0，可以再进循环，防止丢失最后一个进位
+        while (index1 >= 0 || index2 >= 0 || carry > 0) {
+            int value1 = index1 < 0 ? 0 : str1.charAt(index1--) - '0';
+            int value2 = index2 < 0 ? 0 : str2.charAt(index2--) - '0';
+            int sum = value1 + value2 + carry;
+            carry = sum / 10;
+            //从头部插入，无需reverse操作
+            sb.insert(0, sum % 10);
+        }
+
         return sb.toString();
     }
 }

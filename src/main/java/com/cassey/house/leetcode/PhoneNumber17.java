@@ -1,40 +1,47 @@
 package com.cassey.house.leetcode;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * 电话号码的字母组合
  * https://blog.csdn.net/qq_17550379/article/details/82459849?ivk_sa=1024320u
- *
  */
 public class PhoneNumber17 {
-    static String[] mapping = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    static String[] mapping = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    private static List<String> res = new ArrayList<>();
+    private static StringBuilder path = new StringBuilder();
 
     public static void main(String[] args) {
-        String[] test = getString("23");
-        System.out.println(test);
+        List<String> list = getString("23");
+        System.out.println(list.stream().collect(Collectors.joining(",")));
     }
 
-    public static String[] getString(String source) {
-        Set<String> total = new HashSet<>();
-        for(char c : source.toCharArray()) {
-            total.add(mapping[Integer.valueOf(String.valueOf(c))]);
+    public static List<String> getString(String source) {
+        if (source == null || source.length() == 0) {
+            return res;
         }
 
-        String totalStr = "";
+        letterCombination(source, 0);
+        return res;
+    }
 
-        for(String str : total) {
-            totalStr += str;
+    private static void letterCombination(String source, int pos) {
+        if (path.length() == source.length()) {
+            res.add(path.toString());
+            return;
         }
 
-        char[] totalC = totalStr.toCharArray();
-        for(char c : totalC) {
+        String currentChars = mapping[Integer.valueOf(String.valueOf(source.charAt(pos)))];
 
+        for (int i = 0; i < currentChars.length(); i++) {
+            path.append(currentChars.charAt(i));
+            letterCombination(source, pos + 1);
+            path.deleteCharAt(path.length() - 1);
         }
-
-        System.out.println(total);
-        return new String[0];
     }
 }

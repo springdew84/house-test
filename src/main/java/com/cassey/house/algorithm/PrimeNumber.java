@@ -1,5 +1,8 @@
 package com.cassey.house.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 素数(质数)
  * 质数又称素数。

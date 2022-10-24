@@ -21,8 +21,8 @@ public class BinSearchService implements SearchService {
         return this.getClass().getSimpleName() + ":折半查找（二分查找）";
     }
 
-    @Override
-    public int find(int[] arr, int key) {
+    //@Override
+    public int find2(int[] arr, int key) {
         SortService sortService = new QuickSortServiceImpl();
         sortService.sort(arr);
 
@@ -63,7 +63,8 @@ public class BinSearchService implements SearchService {
      * @param key
      * @return
      */
-    public int find2(int[] arr, int key) {
+    @Override
+    public int find(int[] arr, int key) {
         int middle;
         int start = 0;
         int end = arr.length - 1;
@@ -75,17 +76,17 @@ public class BinSearchService implements SearchService {
                 return arr.length;
             }
 
-            if(key > middle) {
+            if(key > arr[middle]) {
                 start = middle + 1;
-            } else if(key < middle) {
+            } else if(key < arr[middle]) {
                 end = middle - 1;
             } else {
                 int first = middle;
-                while (first >= 0 && arr[first] == arr[middle]) {
+                while (first > 0 && arr[first - 1] == arr[middle]) {
                     first--;
                 }
 
-                return first++;
+                return first;
             }
         }
 

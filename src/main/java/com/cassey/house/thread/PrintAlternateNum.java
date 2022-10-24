@@ -27,7 +27,7 @@ class PrintThread implements Runnable {
             synchronized (this) {
                 try {
                     System.out.println("thread-" + Thread.currentThread().getName() + ":" + index++);
-                    notify();
+                    this.notify();
                     if(index <= 100) {
                         this.wait();
                     }

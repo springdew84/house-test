@@ -1,4 +1,4 @@
-package com.cassey.house.algorithm.linkdlist;
+package com.cassey.house.algorithm.linkedList;
 
 public class ListNode {
     int value;
