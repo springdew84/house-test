@@ -1,6 +1,8 @@
 package com.cassey.house.leetcode;
 
 /**
+ * 最大价值总和
+ 招行笔试算法题
  * https://blog.csdn.net/nobody_lo/article/details/114487446
  */
 public class MaxValueSum {
@@ -54,6 +56,33 @@ public class MaxValueSum {
             maxValue += v;
         }
         return maxValue;
+    }
+
+    /**
+     * 修正&改进
+     * @param nums
+     * @param values
+     * @return
+     */
+    public int getMaxValue2(int[] nums, int[] values) {
+        int[] valuePerTime = new int[values.length+1];
+        valuePerTime[0] = 0;
+        int l = 0, r = values.length - 1, i = 1;
+
+        for(int v : values) {
+            if(l > r) {
+                return valuePerTime[nums.length];
+            }
+
+            if(nums[l] > nums[r]) {
+                valuePerTime[i] = valuePerTime[i - 1] + v * nums[l++];
+            } else {
+                valuePerTime[i] = valuePerTime[i - 1] + v * nums[r--];
+            }
+            i++;
+        }
+
+        return valuePerTime[nums.length];
     }
 
     public static void main(String[] args) {

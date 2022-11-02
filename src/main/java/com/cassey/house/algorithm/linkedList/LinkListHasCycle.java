@@ -17,8 +17,17 @@ public class LinkListHasCycle {
 
         ListNode head = node1;
         System.out.println("hasCycle:" + hasCycle(head));
+
+        ListNode entryNode = entryOfNodeLoop(head);
+        entryNode.print("list entry node:");
     }
 
+    /**
+     * BM6. 判断链表中是否有环
+     *
+     * @param head
+     * @return
+     */
     private static boolean hasCycle(ListNode head) {
         if(head == null) {
             return false;
@@ -37,5 +46,52 @@ public class LinkListHasCycle {
         }
 
         return false;
+    }
+
+    /**
+     * BM6. 判断链表中是否有环
+     *
+     * @param head
+     * @return
+     */
+    private static ListNode getCycleNode(ListNode head) {
+        if(head == null) {
+            return null;
+        }
+
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow) {
+                return fast;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * BM7. 链表中环的入口节点
+     * @param head
+     * @return
+     */
+    public static ListNode entryOfNodeLoop(ListNode head) {
+        ListNode slow = getCycleNode(head);
+        if(slow == null) {
+            return null;
+        }
+
+        //快指针回到起点
+        ListNode fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        return slow;
     }
 }
